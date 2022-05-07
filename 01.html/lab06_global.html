@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab06_gloabl.html</title>
+</head>
+<body>
+    <!-- data-* 사용자 정의 데이터 -->
+    <div data-global-info="data 속성">데이터 div</div>
+
+    <!-- div(dom).dataset.dataGlobalInfo -->
+    <div title="드래그가능"draggable="true"> drag and drop</div>
+
+    <!-- tabindex TAB를 이용해 요소를 순차적으로 포커스 진행(tabindex 값을 음수로 지정시 네거티브값으로 포커스가 안됨) -->
+    <!-- 대화형컨텐츠(input, audio, object, ..)는 코드 순서대로 탭 순서 지정 
+         비대화형 컨텐츠에 tabindex="0"으로 지정하면 사용가능 -->
+    <input type="text"value ="1" tabindex ="1">
+    <input type="text"value ="2"tabindex ="2">
+    <div tabindex="0">2.5</div>
+    <input type="text"value ="3" tabindex ="3">
+    <input type="text"value ="4"tabindex ="4">
+    <input type="text"value ="5"tabindex = "5">
+    <hr>
+
+    <!-- 특수기호 (Entity) -->
+    < &lt; > &gt; &Uarr;
+
+</body>
+</html>

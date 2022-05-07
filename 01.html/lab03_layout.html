@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_layout</title>
+</head>
+<body>
+    <!-- 블록 -->
+    <p style="background-color: tomato;">p는 블록입니다</p>
+    <div style="background-color : gold">div도 블록입니다</div>
+    <br><br><br>
+
+    <!-- 인라인 -->
+    <span style="background-color: violet;">span은 인라인 입니다</span>
+    <span style="background-color: violet;">span은 인라인 입니다</span>
+    <!--블록태그안에 블록태그 들어갈 수 있음,
+        인라인태그안에 인라인태그 들어갈 수 있음, 
+        블록태그안에 인라인태그가 들어갈 수 있음,
+        인라인 태그안에는 블록태그가 들어갈 수 없음-->
+    
+    <!-- 시멘틱 -->
+    <div>
+        <header>헤더</header>
+        <nav>내비게이션</nav>
+        <section>
+            <article>아티클1</article>
+            <article>아티클2</article>
+        </section>
+        <aside>사이드</aside> <!-- css로 정렬작업을 해야함 -->
+        <footer>푸터</footer>
+    </div>
+</body>
+</html>
