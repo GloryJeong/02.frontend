@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_font.html</title>
+    <style>
+        p{
+            font-style: italic;
+            /* font-weight(굵기) : default 400
+            수치화 해서 적용하는 것이 더 좋음 */
+            font-weight: blod; 
+        }
+        div{
+            font-size: 16px;
+        }
+        
+        html{
+            font-size : 10px;
+            font: bold 10px;
+        }
+        body *{
+            border: 2px solid;
+        }
+        .container{
+            /* width: 200px; */
+            font-size : 10px;
+            /* 10px = 1em */
+            /* em : 자기 자신의 폰트 크기가 기준 */
+            width: 20em;
+        }
+        .parent{
+            /* width: 50%; */
+            /* %는 부모요소의 단위에 영향을 받음 */
+            width : 10em;
+            font-size: 10px
+        }
+        .child{
+            /* width: 50px; */
+            width: 5rem;
+            /* 최상위 root의 font-size를 기준 */
+            /* 가장 최상위인 html태그를 기준으로 함
+                html의 기본 폰트사이즈는 16px 이므로 1rem = 16px */
+        }
+
+        /* vh,vw */
+        .container2{
+            width: 50vw;
+            /* 50vw: 화면을 기준으로 2분의1만 가진다는 의미 */
+        }
+
+        /* line-heigth */
+        .line{
+            line-height: 2
+        }
+        .color {
+            /* color: red; */
+            /* color: rgb(255,0,0); */
+            color: #FF0000;
+        }
+        .family{
+            font-family: cursive;
+        }
+
+        /* text-align */
+        .align{
+            text-align: justify;
+        }
+
+        /* text-decoration */
+        .deco{
+            text-decoration: line-through;
+        }
+
+        /* text-indent */
+        .indent{
+            text-indent: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p>폰트 스타일 입니다</p> -->
+    
+    <!-- font-weight -->
+    <!-- <p>폰트 웨이트입니다</p> -->
+
+    <!-- font-size -->
+    <!-- 단위 : px, cm, %, em -->
+    <!-- 기준 : 16px -->
+    <!-- small,medium 사용 가능 -->
+    <!-- <div>폰트 사이즈입니다</div> -->
+
+    <!-- 단위 디테일 -->
+    <!-- <div class="container">컨테이너
+        <div class="parent">부모
+            <div class="child">자식1</div>
+            <div class="child">자식2</div>
+        </div>
+    </div><br> -->
+    <!-- vw, vh -->
+    <!-- <div class="container2">컨테이너2</div><br> -->
+
+    <!-- line-height -->
+    <!-- <div class="line">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, facilis minus nobis vero totam maiores quaerat illo enim dolor rem voluptate repellat delectus ex est voluptas consectetur magni provident temporibus?</div> -->
+
+    <!-- color -->
+    <!-- <div class="color">폰트 컬러 입니다</div> -->
+
+    <!-- font-famliy -->
+    <!-- : [글꼴 후보1,2,...], 글꼴 계열 -->
+    <!-- serif : 바탕체
+    sans-serif : 고딕체
+    monospace : 가로폭 동등한 고정 너비
+    cursive : 필기체
+    fantasy : 재미있는 글꼴 계열 -->
+    <!-- <div class="family">Hello,CSS</div> -->
+
+    <!-- <div class="align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque saepe sed aperiam provident necessitatibus, sit fugit nobis non in accusantium alias veritatis molestiae quod ducimus tempora rerum dicta illum eligendi!
+    Odit dolore dicta accusantium expedita recusandae itaque ipsum. Facilis reiciendis aperiam rem illum nobis, consectetur explicabo voluptatibus ad molestiae perspiciatis assumenda deleniti possimus obcaecati qui aliquid, ipsum velit id asperiores.
+    Quod laboriosam a enim explicabo repudiandae est distinctio, alias nesciunt fuga eos error ut repellat dolorum non cumque doloremque ipsum reprehenderit! Possimus facilis tempora voluptatibus. Architecto blanditiis nostrum possimus voluptatem.</div> -->
+
+    <!-- text-decoration -->
+    <!-- <div class="deco">
+        Hello,CSS
+    </div> -->
+    
+    <!-- text-indent -->
+    <div class="indent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi perferendis, ipsum natus rerum modi recusandae tempore eos officiis numquam ipsam ut! Eum, beatae? Reprehenderit, minima veniam! Error distinctio quae illo.</div>
+</body>
+</html>

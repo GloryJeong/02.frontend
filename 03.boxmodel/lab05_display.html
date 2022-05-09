@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab05_display.html</title>
+    <style>
+        span{
+            width: 100px;
+            height: 100px;
+            background : gold;
+            display: block;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+            margin: 50px 0;
+            display : inline-block
+        }
+        input:nth-child(2){
+            /* display: none; */
+            opacity: 50;
+        }
+    </style>
+</head>
+<body>
+    <!-- display : 요소의 박스 타입 -->
+    <!-- block,inline(margin, padding에 top과 bottom에는 사용할 수 없음) -->
+    <!-- inline-block : 인라인의 성향을 가지고 있고 블록처럼 사용할 때 -->
+    <!-- none : 요소를 보이지 않게 숨김 -->
+    <span></span>
+
+    <input type="text" value="1"></input>
+    <input type="text" value="2"></input>
+    <input type="text" value="3"></input>
+
+
+</body>
+</html>

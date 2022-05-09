@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_float.html</title>
+    <style>
+        article .pic{
+            width: 100px;
+            height: 100px;
+            background : darkblue;
+            margin: 10px;
+            float: left;
+        }
+        .p2{
+            clear: left;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background : gold;
+            margin :10px;
+            float : left;
+        }
+        .box4{
+            width: 200px;
+            height: 150px;
+            background: tomato;
+            clear : left;
+        }
+        /* 2. 부모요소 해제 */
+        .parent{
+            overflow: hidden;
+        }
+        /* 3. clearfix */
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display : block;
+        }
+        span{
+            width :100px;
+            height: 100px;
+            background : violet;
+            margin : 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div class="pic"></div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quisquam error dolorum veniam ut architecto ipsa libero pariatur nobis, dolor et ad. Saepe, nulla corrupti nisi sequi sit hic ex?
+        <div class="p2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, commodi placeat. Voluptas eaque, esse unde veritatis tenetur ducimus id. In, obcaecati. Voluptatibus esse eum, maiores vitae temporibus corrupti id nostrum!</div>
+    </article>
+    <hr>
+    <!-- <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box4"></div> -->
+    <!-- float 해제 방법 -->
+    <!-- 1. 형제 요소에 clear: left,right,both -->
+    <!-- 만약 해제 대상 형제 요소가 없다면? -->
+    <!-- 2.부모요소에 overflow : hidden, auto -->
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <!-- overflow는 정렬과 관계 없는 property이므로 적절치 않음 -->
+    <!-- 부모요소에 clearfix클래스 추가 -->
+    <div class="clearfix">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="box4"></div>
+    
+    <hr>
+    <!-- float의 경우 inline-, table- 요소를 block으로 변경하는 부분이 내포 -->
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+</body>
+</html>
