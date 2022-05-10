@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_output.html</title>
+</head>
+<body>
+    <div id="innerHTML1"></div>
+    <div id="innerHTML2"></div>
+    <script>
+        var var1 = "Hello";
+        var var2;
+        // 1. console()
+        console.log("콘솔 출력");
+        
+        // 2. prompt()
+        // var2 = prompt(var1);
+        // if (var2 == null) {
+        //     var2 = "오류!"
+        // } else if(var2 == ""){
+        //     var2 = "입력!"
+        // }
+        
+        
+        // 3. alert()
+        // alert(var2)
+        
+
+        // 4. document.write()
+        // document.write("document 출력");
+
+        // 5.HTML요소를 통한 출력
+        document.getElementById("innerHTML1").innerHTML = "innerHTML 요소 내부에 출력";
+        // 존재하지 않는 요소에 출력은 에러가 발생
+        // 또한, div id="innerHTML2"가 script보다 밑에 있으면 에러 발생
+        document.getElementById("innerHTML2").innerHTML = "innerHTML 요소 내부에 출력";
+        
+
+    </script>
+        
+</body>
+</html>
