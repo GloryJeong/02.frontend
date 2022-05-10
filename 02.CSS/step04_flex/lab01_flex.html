@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_flex.html</title>
+    <style>
+        .container{
+            border: 2px solid red;
+            /* font-size: 0px; */
+            display: flex;
+        }
+        /* 시나리오 1 */
+        /* .container .item{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+            display: inline-block;
+            font-size:16px;
+        } */
+        /* 시나리오 2 */
+        /* .container .item{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+            float: left;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        } */
+
+        /* 시나리오3 */
+        /* .container .item{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+        }
+        .container {
+            display: flex;
+            display: inline-flex;
+        } */
+        /* .container .item{
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+        } */
+        .container{
+            flex-wrap: nowrap;
+            flex-wrap: wrap;
+        }
+        /* 4. justify-content */
+        /* flex-start : 왼쪽에서 부터
+        flex-end : 오른쪽에서 부터
+        space-around : 양쪽 간 공백 맞춤
+        space-between : 양쪽 공백은 무시하고 분할
+        space-evenly : 빈 공백을 균등 분할
+        .container{
+            justify-content: space-evenly;
+        } */
+        /* 5. align-content */
+        /* .container{
+            height : 400px;
+            align-content: stertch;
+        } */
+        /* 6. align-items */
+        .container{
+            height : 400px;
+            align-items: center;
+        }
+        /* .item:nth-child(3){
+            font-size: 50px;
+        } */
+        .item{
+            display : flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 7. order */
+        /* order의 값이 큰값이 뒤로 밀림 */
+        .order2{
+            order: 2;
+        }
+        .order3{
+            order: 3;
+        }
+        
+        /* 8.flex-grow */
+        /* .item1{
+            flex-grow:1
+        }
+        .item2{
+            flex-grow:2
+        } */
+
+        /* 10.flex */
+        .container .item{
+            height: 100px;
+            border: 2px solid;
+            /* flex-grow : 1; */
+            /* flex-basis : 0; */
+            /* flex : 1 1 1 ; */
+            /* grow랑 shrink 속성을 다 1로 설정
+                basis 값은 0이 됨 */
+            flex : 1 ;
+        } 
+    </style>
+</head>
+<body>
+    <!-- flex -->
+    <!-- <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div> -->
+    <!-- flex -->
+    <!-- 메인축/ 수직축 -->
+    <!-- container/ item -->
+    <!-- <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div> -->
+    <!-- 2. main/cross -->
+    <!-- flex-direction : row/column -->
+    <!-- https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Flexbox -->
+    
+    <!-- 3. flex-wrap : 줄넘김 처리(컨테이너가 아이템을 담을 공간이 없을 경우 줄바꿈 방식) -->
+    <!-- <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item order2">item3</div>
+        <div class="item">item4</div>
+        <div class="item order3">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+    </div> -->
+
+    <!-- 4. justify-content : 주축 정렬방식 -->
+    <!-- 위의 예제 사용 -->
+
+    <!-- 5. align-content : 수직축 정렬 방식(빈 공간이 있을 때 + 여러 줄이 있을 때만) -->
+    <!-- 위의 예제 사용 -->
+
+    <!-- 6. align-item -->
+    <!-- 위의예제 사용 -->
+
+    <!-- 아이템에 부여하는 속성 -->
+    <!-- 7. order : 순서 지정(숫자가 클수록 뒤로 밀림) -->
+    <!-- 위의 예제 사용 -->
+
+    <!-- 8. flex-grow : 증가 너비 비율 -->
+    <!-- 8. flex-shrink : 감소 너비 비율 -->
+    <!-- <div class="container">
+        <div class="item1">item1</div>
+        <div class="item2">item2</div>
+        <div class="item">item3</div>
+    </div> -->
+
+    <!-- flex 축약 표현 -->
+    <!-- flex : 증가, 감소, 기본(0,1,auto) -->
+    <!-- flex : 1 1 auto; -->
+    <!-- 기본은 flex-basis를 의미한다
+    따라서 본래 basis의 기본값은 auto이다
+    그런데 축약표현으로 basis를 표현할 때 기본값은 auto가 아니라
+    0으로 표현된다 -->
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item">2</div>
+        <div class="item">item333333333</div>
+    </div>
+</body>
+</html>

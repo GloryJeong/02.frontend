@@ -50,6 +50,39 @@
             top: 50px;
             right: 50px;
         } */
+
+        /* sticky */
+        .container{
+            
+        }
+        .section{
+            height: 300px;
+            border: 3px solid black;
+        }
+        .section h1{
+            text-align: center;
+            top: 0;
+            position: sticky;
+        }
+        /* z-index */
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+            margin-right: -20px;
+        }
+        .box:nth-child(2n){
+            margin-top: 20px;
+        }
+        .box2{
+            position: relative;
+            z-index: 2;
+        }
+        .box3{
+            position: relative;
+            z-index: 1;
+        }
      </style>
 </head>
 <body>
@@ -64,10 +97,10 @@
         </div> -->
 
         <!-- relative(원래 자기 자신으로 부터 떨어짐) -->
-        <div class="box">1</div>
+        <!-- <div class="box">1</div>
         <div class="box relative">2</div>
         <div class="box">3</div>
-        
+         -->
         <!-- absolute -->
         <!-- <div class="grand">
             <div class="parent">
@@ -75,7 +108,42 @@
                 <div class="box absolute">2</div>
                 <div class="box fixed">3</div>
             </div>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+        </div> -->
+
+        <!-- sticky -->
+        <!-- <div class="container">
+            <div class="section">
+                <h1>Title1</h1>
+            </div>
+            <div class="section">
+                <h1>Title2</h1>
+            </div>
+            <div class="section">
+                <h1>Title3</h1>
+            </div>
+            <div class="section">
+                <h1>Title4</h1>
+            </div>
+            <div class="section">
+                <h1>Title5</h1>
+            </div>
+            <div class="section">
+                <h1>Title6</h1>
+            </div>
+        </div> -->
+        
+        <!-- z index -->
+        <!-- 요소 쌓임 순서 : 쌓여 있는 순서를 통해 z축을 결정 -->
+        <!-- 1. html순서에서 마지막에 위치할 수록 위에 쌓임 -->
+        <div class="box">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+
+        <!-- 2. position(static)이 있을 경우에 위에 쌓임 -->
+        <!-- 3. z-index 클수록 위에 쌓임 -->
+
+
 </body>
-</html>
+</html> 

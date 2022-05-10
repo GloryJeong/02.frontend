@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab02_transform.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background : gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border : 3px solid red;
+            transition: all 1s;
+
+            /* transform: rotate(90deg);
+            transform: translate(100px, 30px) */
+            
+        }
+        .box:hover{
+            transform: translate(100px, 100px);
+            transform: scale(0.5)
+        }
+    </style>
+</head>
+<body>
+    <!-- transform: 요소의 변환효과 지정 -->
+        <!-- transform : 변환함수1,2,3,..; -->
+        <!-- transform: 원근법 이동 크기 회전 기울임; -->
+        <!-- 2D 변환함수 -->
+        <!-- 이동 : translate(x,y), translateX(x), translateY(y) -->
+        <!-- 크기 : scale(x,y), scaleX(x), scaleY(y) -->
+        <!-- 회전 : rotate(degree) -->
+        <!-- 기울임 : skew(x-deg, y-deg) -->
+        
+        <!-- 2D 변환함수 -->
+        <!-- 이동 : translate3d(x,y,z),translateZ(z)
+        크기 : scale3D(x,y,z), scale3dZ(z)
+        회전 : rotate3d(x,y,z), rotateX, rotateY, rotateZ
+        원근법 : perspective(n) -->
+        
+        <div class="box">transform</div>
+    </body>
+</html>
