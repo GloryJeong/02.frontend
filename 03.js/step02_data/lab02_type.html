@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab02_type.html</title>
+</head>
+<body>
+    <script>
+        // js의 자료형은 동적 타입
+
+        //typeof
+        //기본(원시, primitive) VS 객체(reference)
+        //기본
+            // Number (숫자)
+            console.log(10); //양수
+            console.log(-10); // 음수
+            console.log(10.2); // 실수
+            console.log(typeof(10.2));  //NUMBER
+            // NaN : Not a Number
+            console.log('Ten'/3); // NaN
+            console.log(typeof('Ten'/3)); // Number ?? -> Number가 가진 특정 값 NaN
+            
+            //Infinity : 무한
+            console.log(10/0); // Infinity
+            console.log(typeof(10/0)); // NaN과 같은 Number가 가진 특정 값
+
+            // string(문자열)
+            console.log('---문자열---');
+            console.log("큰따옴표 문자열");
+            console.log("큰따옴표 안에 '작은 따옴표'");
+            console.log('작은따옴표 안에 "큰 따옴표"');
+            //escape
+            //console.log("큰따옴표 안에"큰따옴표""); //큰따옴표 안에 큰따옴표 사용불가, 작은 따옴표도 동일
+            console.log("큰따옴표 안에\"큰따옴표\""); //escape인 \로 출력 가능
+            // console.log("한줄
+            // 띄어쓰기") SyntaxError: Invalid or unexpected token
+            
+            // 백틱 `
+            console.log(`한줄
+            띄어쓰기`);
+            let lecture = "JS";
+            console.log('우리는 JS 학습중입니다.')
+            console.log('우리는'+lecture+'학습중입니다.')
+            // 템플릿 리터럴
+            console.log(`우리는 ${lecture} 학습중입니다.`) // 백틱 사용(${}로 변수 사용)
+
+            //Boolean (불리언) : 참 true/ 거짓 false
+            console.log('---불리언---');
+            console.log(true);
+            console.log(1>2);
+
+            // undefined & NULL
+            // undefined : 값이 할당 되지 않는 상태
+            console.log(typeof(def));
+
+            // null: 어느 자료형에도 속하지 않는 아무런 데이터가 없는 상태
+            console.log(null);
+            
+            // Symbol : 고유한 값
+            console.log('---Symbol---');
+            let a = Symbol();
+            console.log(typeof(a));
+            
+            let b= Symbol('js');
+            let c= Symbol('js');
+            console.log(b === c); // 고유한 값이기 때문에 false
+            
+            
+            
+
+
+
+
+
+            
+            
+    </script>
+</body>
+</html>
