@@ -53,6 +53,7 @@ div.find_img {
     height: 200px;
     max-width: 200px;
     min-width: 150px;
+    border: 2px  red;
     background-size:contain;
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -61,3 +62,35 @@ div.find_img {
     margin: 50px;
     
 }
+ul.card{
+    max-width: 100%;
+    min-width: 20%;
+    margin-top: 5%;
+    margin-left : 80%;
+    height: 200px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-size: contain;
+    border: 2px solid red;
+}
+li.fistCard{
+    width: 100%;
+    height: 50%;
+    border: 2px solid black;;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url("https://image.istarbucks.co.kr/upload/banner/floatingbnr/WIP8gI_20220412094134198.png");
+    
+}
+li.secondCard{
+    width: 100%;
+    height: 50%;
+    border: 2px solid black;;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url("https://image.istarbucks.co.kr/upload/banner/floatingbnr/WIP8gI_20220412094134198.png");
+}
+
