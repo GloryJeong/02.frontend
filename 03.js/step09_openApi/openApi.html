@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openApi.html</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="common.js" defer ="defer"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 >도서 소개</h1>
+        <form action="">
+            <select name="" id="select-box">
+                <option value="">장르</option>
+                <option value="1">통계</option>
+                <option value="2">일반행정</option>
+                <option value="3">연구/논문</option>
+                <option value="4">역사/사료</option>
+                <option value="5">문화/관광</option>
+            </select>
+        </form>
+        <div id="draw-info">
+            <div class="main">
+                <div class="book-img">
+                    <img src="http://store.seoul.go.kr/images/goods/10035_imgl.jpg"
+                        class="backimg">
+                </div>
+                <!-- 책제목 G_NAME -->
+                <div class="book-title">동적전식례</div>
+                <!-- 책정보 -->
+                <div class="book-info-head text-center">
+                    <!-- rankOldAndNew -->
+                    <p>Status</p>
+                    <!-- rank -->
+                    <p>Rank</p>
+                    <!-- scrnCnt -->
+                    <p>Screens</p>
+                    <!-- showCnt -->
+                    <p>Show</p>
+                </div>
+                <div class="book-info-content text-center">
+                    <!-- rankOldAndNew -->
+                    <p>${element.rankOldAndNew}</p>
+                    <!-- rank -->
+                    <p>${element.rank}</p>
+                    <!-- scrnCnt -->
+                    <p>${element.scrnCnt}</p>
+                    <!-- showCnt -->
+                    <p>${element.showCnt}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
