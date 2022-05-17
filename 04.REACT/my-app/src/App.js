@@ -1,27 +1,26 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Hello from './Hello';
+import UseState1 from './UseState1';
+import UseState2 from './UseState2';
+import View from './View';
+
 
 function App() {
+  const title = "React"
+  const basicStyle = {color: "green", fontSize : '40px'}
+  // const basic = {color: "red", fontSize : '30px'}
+  // const {color} = basic;
+
   return (
-    <div className="App">
-      {/* 주석 */}
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          리액트 배우기
-        </a>
-      </header> */}
-      <Hello></Hello>
-    </div>
+    // <View>
+    //   <Hello name="react" color="red"></Hello>
+    //   {/* <Hello name="react" color="blue"></Hello> */}
+    //   <Hello color="yellowgreen" important={true}></Hello>
+    //   {/* <div className="item"></div>
+    //   <div style={basicStyle}>{title}</div> */}
+    // </View>
+    <UseState2/>
   );
 }
 
