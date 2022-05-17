@@ -1,0 +1,2 @@
+node_modules : 패키지가 들어있는 폴더
+public : css, img, html, js,component 등의 정적(static) 컨텐츠가 들어있는 폴더
