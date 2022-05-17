@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Hello from './Hello';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* 주석 */}
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -15,9 +17,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          리액트 배우기
         </a>
-      </header>
+      </header> */}
+      <Hello></Hello>
     </div>
   );
 }
