@@ -1,0 +1,16 @@
+- useRef?
+
+-문법
+const ref = useRef("기본값");
+{current:"기본값"}
+
+- 사용
+대표적으로 2가지
+1. 저장
+state -> 렌더링 -> 초기화
+
+Ref -> 불필요한 랜더링 x -> 변수값을 유지
+
+state -> 렌더링 -> Ref 값을 유지
+
+2. DOM 요소 접근 : focus, 애니메이션 ... 
