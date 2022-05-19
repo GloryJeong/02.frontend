@@ -14,6 +14,11 @@ import UseRef2 from './UseRef2';
 import UseRef3 from './useRef3';
 import News from './News';
 import { UseContext1 } from './UseContext1';
+import UseMemo1 from './UseMemo1';
+import UseMemo2 from './UseMemo2';
+import UseCallback1 from './UseCallback1';
+import UseCallback2 from './UseCallback2';
+import UseReducer1 from './Usereducer1';
 
 function App() {
   const title = "React"
@@ -60,9 +65,17 @@ function App() {
     {/* useContext 사용 */}
     {/* <News
      company={company} setCompany={setCompany}></News> */}
-     <UseContext1.Provider value={{company,setCompany,color,setColor}}>
+     {/* <UseContext1.Provider value={{company,setCompany,color,setColor}}>
     <News></News>
-     </UseContext1.Provider>
+     </UseContext1.Provider> */}
+
+    {/* <UseMemo1></UseMemo1> */}
+    {/* <UseMemo2></UseMemo2> */}
+    {/* <UseCallback1></UseCallback1> */}
+    {/* <UseCallback2></UseCallback2> */}
+
+    {/* UseReducer1 */}
+    <UseReducer1></UseReducer1>
 
 
 
