@@ -1,0 +1,25 @@
+컴포넌트 수명 주기
+
+https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.stack.imgur.com%2F4tyOp.png&type=sc960_832
+
+  
+- cycle
+mount : DOM이 생성되고 브라우저창에 표현되는 것
+
+- 마운트에 호출되는 메서드
+constructor : 컴포넌트 생성시 호출
+ge  tDerivedStateFromProps : props에 있는 값을 state에 할당
+render : 준비된 UI 렌더링
+componentDidMount : 브라우저상에 컴포넌트가 생성된 후 호출
+
+--업데이트에 호출되는 메서드
+getDerivedStateFromProps : props 값의 변화에 따라 state의 값에도 변화
+shouldComponentUpdate : component가 리렌더링을 해야할지 결정(true)
+render : 
+getSnapshotBeforeUpdate : component 변화에 반응하여 DOM 반영되기 전 호출
+componentDidUpdate : component 업데이트 작업 종료 후 호출
+
+
+--unmount : 컴포넌트를 DOM에서 제거하는 것
+
+componentWillUnmount : component가 브라우저상에서 사라지기 전에 호출

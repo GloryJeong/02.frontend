@@ -1,15 +1,20 @@
 import React, { useCallback, useEffect, useReducer, useState } from "react";
 
+const ACTION_TYPES  = {
+    buy : "buy",
+    sell : "sell"
+}
+
 const reducer = (state, action) =>{
     // console.log("--reducer 동작");
     // console.log(state,action);
     switch (action.type) {
-        case "buy":
+        case ACTION_TYPES.buy:
             return state - action.stock;
-        case "sell" : 
+        case ACTION_TYPES.sell : 
             return state + action.stock;
         default:
-            return;
+            return state;
     }
 }
 
@@ -27,8 +32,8 @@ function UseReducer1() {
                 step="1000">
             </input>
             <br />
-            <button onClick={()=>{dispatch({type : "buy" , stock : number})}}>매수</button>
-            <button onClick={() => {dispatch({type : "sell", stock : number})}}>매도</button>
+            <button onClick={()=>{dispatch({type : ACTION_TYPES.buy , stock : number})}}>매수</button>
+            <button onClick={() => {dispatch({type : ACTION_TYPES.sell, stock : number})}}>매도</button>
         </div>
     )
 }

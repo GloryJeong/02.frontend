@@ -19,6 +19,7 @@ import UseMemo2 from './UseMemo2';
 import UseCallback1 from './UseCallback1';
 import UseCallback2 from './UseCallback2';
 import UseReducer1 from './Usereducer1';
+import UseReducer2 from './UseReducer2';
 
 function App() {
   const title = "React"
@@ -75,7 +76,8 @@ function App() {
     {/* <UseCallback2></UseCallback2> */}
 
     {/* UseReducer1 */}
-    <UseReducer1></UseReducer1>
+    {/* <UseReducer1></UseReducer1> */}
+    <UseReducer2></UseReducer2>
 
 
 
