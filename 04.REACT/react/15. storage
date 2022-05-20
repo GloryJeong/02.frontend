@@ -1,0 +1,13 @@
+WebStorage
+- local / session
+
+- localStorage : key : value, 문자열로 저장, json
+
+- 사용
+window.localStorage.
+- setItem(k : v)
+- getItem(k)
+- removeItem()
+- clear()
+- length
+- key(idx)

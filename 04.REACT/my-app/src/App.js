@@ -20,6 +20,8 @@ import UseCallback1 from './UseCallback1';
 import UseCallback2 from './UseCallback2';
 import UseReducer1 from './Usereducer1';
 import UseReducer2 from './UseReducer2';
+import UseReducer3 from './UseReducer3';
+import Storage from './Storage';
 
 function App() {
   const title = "React"
@@ -48,8 +50,8 @@ function App() {
       <Child></Child>
     </Parent> */}
 
-    {/* <UseState1/>
-    <UseState2/> */}
+    {/* <UseState1/> */}
+    {/* <UseState2/> */}
     {/* <UseEffect2 state={previousState}/> */}
     {/* work 버튼을 클릭 했을 때 
     --> 1) '작업중 - 콘솔보기'가 출력되면서
@@ -77,7 +79,10 @@ function App() {
 
     {/* UseReducer1 */}
     {/* <UseReducer1></UseReducer1> */}
-    <UseReducer2></UseReducer2>
+    {/* <UseReducer2></UseReducer2> */}
+    {/* <UseReducer3></UseReducer3> */}
+
+    <Storage></Storage>
 
 
 
