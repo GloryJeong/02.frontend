@@ -4,8 +4,7 @@ function Storage() {
     const [name, setName] = useState("");
     const [check, setCheck] = useState(false);
     const [arr, setArr] = useState([]);
-    
-    let keyNum = 1;
+    const nextKey = useRef(window.localStorage.length);
 
     const onChange = (e) => {
         setName(e.target.value);
@@ -13,11 +12,12 @@ function Storage() {
         setArr([]);
     };
     const saveName = () => {
+        nextKey.current += 1;
         const user = { name: name };
-        window.localStorage.setItem("key1",JSON.stringify(user))
+        window.localStorage.setItem(`key${nextKey.current}`,JSON.stringify(user))
     }
     const loadName = () => {
-        setCheck(false);
+        // setCheck(false);
         // while(1){
         //     keyNum += 1;
         //     if(window.localStorage.getItem(`key${keyNum}`) === null){
