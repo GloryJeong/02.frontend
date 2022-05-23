@@ -1,4 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
+
+
 
 function Storage() {
     const [name, setName] = useState("");
@@ -6,37 +8,40 @@ function Storage() {
     const [arr, setArr] = useState([]);
     const nextKey = useRef(window.localStorage.length);
     const inputRef = useRef();
+    useEffect(()=>{
+        loadName();
+    },[name])
 
     const onChange = (e) => {
         setName(e.target.value);
-        setCheck(false);
         setArr([]);
     };
     const saveName = () => {
         nextKey.current += 1;
         const user = { name: name };
-        window.localStorage.setItem(`key${nextKey.current}`, JSON.stringify(user))
+        window.localStorage.setItem(`name${nextKey.current}`, JSON.stringify(user))
         setName("")
         inputRef.current.focus();
     }
     const loadName = () => {
         for (let i = 0; i < window.localStorage.length; i++) {
             let key = window.localStorage.key(i);
-            const value = window.localStorage.getItem(key);
-            if (JSON.parse(value).name === name) {
+            const value = JSON.parse(window.localStorage.getItem(key));
+            if (value.name === name) {
                 arr.push({ key, name });
-                setCheck(check ? check : !check);
-                setArr(arr);
             }
         }
+        setArr(arr);
+        setCheck(arr.length !== 0 ? true : false)
         setName("")
         inputRef.current.focus();
 
     }
     const deleteName = () => {
-        console.log(window.localStorage.getItem(name));
         window.localStorage.removeItem(name);
     }
+    
+    
     return (
         <div>
             <input
@@ -44,7 +49,8 @@ function Storage() {
                 name="name"
                 placeholder="이름을 입력하시오"
                 onChange={onChange}
-                value={name} />
+                // value={name} 
+                />
             <button
                 onClick={saveName}>저장</button>
             <button
