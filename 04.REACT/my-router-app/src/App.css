@@ -1,3 +1,27 @@
+li {
+  list-style-type: none;
+}
+.top {
+  background-color: burlywood;
+  color: navy;
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  height: 10vh;
+  /* justify-content: center; */
+}
+.body {
+  background-color: olive;
+  height: 80vh;
+}
+.footer {
+  background-color: burlywood;
+  text-align: center;
+  font-size: 25px;
+  color: navy;
+  font-weight: bolder;
+  height: 10vh;
+}
 .App {
   text-align: center;
 }

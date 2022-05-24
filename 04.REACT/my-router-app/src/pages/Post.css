@@ -1,0 +1,17 @@
+.top-data {
+  margin: 10%;
+  border: 2px solid black;
+  max-height: 600px;
+  overflow: scroll;
+}
+.data-list {
+  color: navy;
+  font-weight: bolder;
+  font-size: 50px;
+  background-color: gold;
+}
+.id-data {
+  color: rgb(55, 236, 236);
+  font-size: 20px;
+  border: 2px solid rgb(182, 211, 75);
+}

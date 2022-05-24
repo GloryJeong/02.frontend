@@ -85,8 +85,8 @@ function App() {
       {/* <Storage></Storage> */}
       {/* <Inputs></Inputs> */}
       {/* <CSSModule></CSSModule> */}
-      {/* <StyledComponent></StyledComponent> */}
-      <Async></Async>
+      <StyledComponent></StyledComponent>
+      {/* <Async></Async> */}
     </div>
   );
 }

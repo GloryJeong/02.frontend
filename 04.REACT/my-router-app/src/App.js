@@ -1,35 +1,23 @@
 import "./App.css";
 import Home from "./Home";
 import { Link, Outlet, NavLink } from "react-router-dom";
+import Nav from "./components/Nav";
 
 // function App({ children }) {
 function App({}) {
-  function activeStyle({ isActive }) {
-    return {
-      textDecoration: isActive ? "underline" : undefined,
-      fontSize: isActive ? "24px" : undefined,
-    };
-  }
-
   return (
     <div>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <NavLink to='/' style={activeStyle}>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <Link to='/projects'>Projects</Link>
-        </li>
-      </ul>
-      <hr />
+      <div className='top'>
+        <Nav className='Nav' />
+      </div>
       {/* <div>{children}</div> */}
-      <div>
+      <div className='body'>
         <Outlet></Outlet>
+      </div>
+      <div className='footer'>
+        정영광
+        <br />
+        <br /> 2022-05-24
       </div>
     </div>
   );
