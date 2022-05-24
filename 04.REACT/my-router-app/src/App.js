@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./Home";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
-function App() {
+// function App({ children }) {
+function App({}) {
+  function activeStyle({ isActive }) {
+    return {
+      textDecoration: isActive ? "underline" : undefined,
+      fontSize: isActive ? "24px" : undefined,
+    };
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <NavLink to='/' style={activeStyle}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <Link to='/projects'>Projects</Link>
+        </li>
+      </ul>
+      <hr />
+      {/* <div>{children}</div> */}
+      <div>
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 }
