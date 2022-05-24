@@ -1,55 +1,73 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
-import { getUsers } from "../api/users";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "LOADING":
+      return {
+        loading: true,
+        data: null,
+        error: null,
+      };
+    case "SUCCESS":
+      return {
+        loading: false,
+        data: action.data,
+        error: null,
+      };
+    case "ERROR":
+      return {
+        loading: false,
+        data: null,
+        error: action.error,
+      };
+    default:
+      throw new Error("예상치 못한 에러 발생");
+  }
+}
 
 function Async() {
-  const [photos, setPhotos] = useState([]);
-  const [pageNumber, setPageNumber] = useState(0);
-  let endNumber = useRef(0);
+  const [state, dispatch] = useReducer(reducer, {
+    loading: false,
+    data: null,
+    error: null,
+  });
 
-  const getData = () => {
-    let url = "https://jsonplaceholder.typicode.com/photos";
-    axios
-      .get(url)
-      .then((response) => {
-        setPhotos(response.data.slice(pageNumber, pageNumber + 10));
-        endNumber.current = response.data.length;
-      })
-      .catch((error) => {
-        console.log("비정상 응답", error);
-      });
+  const getData2 = async () => {
+    dispatch({ type: "LOADING" });
+    try {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/photos"
+      );
+      dispatch({ type: "SUCCESS", data: response.data });
+    } catch (error) {
+      dispatch({ type: "ERROR", error: error });
+    }
   };
-  useEffect(() => {
-    getData();
-  }, [pageNumber]);
+
+  // useEffect(() => {
+  //   getData2();
+  // }, []);
+
+  const { loading, data, error } = state;
+  console.log(data);
+  if (loading) return <div>데이터 요청 중입니다.</div>;
+  if (error) return <div>에러가 발생했습니다.</div>;
+  // if (!data) return null;
+
   return (
     <div>
-      <button onClick={getData}>Data Loading</button>
-      <button
-        onClick={() => {
-          setPageNumber(pageNumber >= endNumber.current ? 0 : pageNumber + 10);
-        }}
-      >
-        next
-      </button>
-      <button
-        onClick={() => {
-          setPageNumber(pageNumber <= 0 ? 0 : pageNumber - 10);
-        }}
-      >
-        previous
-      </button>
-      {photos.map((photo) => {
-        return (
-          <div key={photo.id}>
-            <img src={photo.thumbnailUrl} alt={photo.id}></img>
-            <br />
-            Title : {photo.title}
-          </div>
-        );
-      })}
+      <button onClick={getData2}>Data Loading</button>
+      {data ? (
+        <ul>
+          {data.map((user) => (
+            <li key={user.id}>
+              {user.title} ({user.url})
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 }
-
 export default Async;

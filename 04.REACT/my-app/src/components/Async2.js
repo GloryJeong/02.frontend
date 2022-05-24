@@ -1,53 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { getUsers } from "../api/users";
 
 function Async() {
-  const userData = getUsers();
-  usersData.then((response) => {
-    console.log(response);
-    console.log("-----------");
-  });
+  const [photos, setPhotos] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
+  let endNumber = useRef(0);
 
   const getData = () => {
-    let url = "https://jsonplaceholder.typicode.com/users";
-    // let url = "https://jsonplaceholder.typicode.com/photos";
+    let url = "https://jsonplaceholder.typicode.com/photos";
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data);
-        console.log("정상응답");
+        setPhotos(response.data.slice(pageNumber, pageNumber + 10));
+        endNumber.current = response.data.length;
       })
       .catch((error) => {
         console.log("비정상 응답", error);
       });
   };
-
-  const getData2 = async () => {
-    let url = "https://jsonplaceholder.typicode.com/users";
-    try {
-      const response = await axios.get(url);
-      console.log("정상 응답");
-    } catch (error) {
-      console.log("비정상 응답", error);
-    }
-  };
-
   useEffect(() => {
-    const getData3 = async () => {
-      let url = "https://jsonplaceholder.typicode.com/users";
-      try {
-        const response = await axios.get(url);
-        console.log("정상 응답");
-      } catch (error) {
-        console.log("비정상 응답", error);
-      }
-    };
-  }, []);
-
+    getData();
+  }, [pageNumber]);
   return (
     <div>
-      <button onClick={getData}>Data Loading</button>
+      {/* <button onClick={getData}>Data Loading</button> */}
+      <button
+        onClick={() => {
+          setPageNumber(pageNumber >= endNumber.current ? 0 : pageNumber + 10);
+        }}
+      >
+        next
+      </button>
+      <button
+        onClick={() => {
+          setPageNumber(pageNumber <= 0 ? 0 : pageNumber - 10);
+        }}
+      >
+        previous
+      </button>
+      {photos.map((photo) => {
+        return (
+          <div key={photo.id}>
+            <img src={photo.thumbnailUrl} alt={photo.id}></img>
+            <br />
+            Title : {photo.title}
+          </div>
+        );
+      })}
     </div>
   );
 }
