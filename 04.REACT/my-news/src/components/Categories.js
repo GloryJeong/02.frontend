@@ -1,36 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
-const categories = [
-  {
-    name: "all",
-    text: "전체보기",
-  },
-  {
-    name: "business",
-    text: "비즈니스",
-  },
-  {
-    name: "entertainment",
-    text: "엔터테인먼트",
-  },
-  {
-    name: "health",
-    text: "건강",
-  },
-  {
-    name: "science",
-    text: "과학",
-  },
-  {
-    name: "sports",
-    text: "스포츠",
-  },
-  {
-    name: "technology",
-    text: "기술",
-  },
-];
+import getCategoryData from "../api/getCategoryData";
+import { Link } from "react-router-dom";
+// const categories = [
+//   {
+//     name: "all",
+//     text: "전체보기",
+//   },
+//   {
+//     name: "business",
+//     text: "비즈니스",
+//   },
+//   {
+//     name: "entertainment",
+//     text: "엔터테인먼트",
+//   },
+//   {
+//     name: "health",
+//     text: "건강",
+//   },
+//   {
+//     name: "science",
+//     text: "과학",
+//   },
+//   {
+//     name: "sports",
+//     text: "스포츠",
+//   },
+//   {
+//     name: "technology",
+//     text: "기술",
+//   },
+// ];
 
 const CategoriesBlock = styled.div`
   display: flex;
@@ -60,22 +61,33 @@ const Category = styled.div`
   }
 `;
 
-function Categories({ setCategory }) {
+function Categories({ category, setCategory }) {
+  const [categories, setCategories] = useState([]);
+  const getCategory = async () => {
+    const data = await getCategoryData();
+    console.log(data);
+    setCategories(data);
+  };
+  useEffect(() => {
+    getCategory();
+    console.log(categories);
+  }, []);
+  console.log(category);
   return (
     <CategoriesBlock>
-      {categories.map((category) => (
+      {/* <Link> */}
+      {categories.map((c) => (
         <Category
-          key={category.name}
+          key={c.name}
           onClick={() => {
-            if (category.name === "all") {
-              category.name = "";
-            }
-            setCategory(category.name);
+            setCategory(c.name);
+            category = c.name;
           }}
         >
-          {category.text}
+          <Link to={`/${c.name}`}>{c.text}</Link>
         </Category>
       ))}
+      {/* </Link> */}
     </CategoriesBlock>
   );
 }

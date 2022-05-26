@@ -23,14 +23,20 @@ const sample = {
   urlToImage: "https://via.placeholder.com/160",
 };
 
-function NewsList({ category }) {
+function NewsList({ category, categoryValue }) {
   const [articles, setArticles] = useState([]);
-  console.log(category);
+  console.log(categoryValue);
+  const queryString =
+    categoryValue === "all" || !categoryValue
+      ? ""
+      : "&category=" + categoryValue;
+
+  console.log(categoryValue);
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr&apiKey=bc51f2b5411d4cee80544a3261024959&category=${category}`
+          `https://newsapi.org/v2/top-headlines?country=kr&apiKey=8e1ae87b2eff40b785dbdf5134b493f8${queryString}`
         );
         console.log(response.data.articles);
         setArticles(response.data.articles);
@@ -39,7 +45,7 @@ function NewsList({ category }) {
       }
     };
     getData();
-  }, [category]);
+  }, [category, categoryValue]);
 
   return (
     <NewsItemBlock>
