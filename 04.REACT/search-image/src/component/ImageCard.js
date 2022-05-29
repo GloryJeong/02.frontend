@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { useState } from "react";
+import Modal from "./Modal";
+import "./modal.css";
 
 const Card = styled.div`
   margin-left: 8px;
@@ -16,10 +19,14 @@ const Img = styled.img`
 `;
 
 const ImageCard = ({ imgData, onClick }) => {
-  console.log(onClick);
-  const { webformatURL, id } = imgData;
+  const [modalOpen, setModalOpen] = useState(false);
+  const { webformatURL, id, previewURL } = imgData;
   return (
-    <Card onClick={onClick}>
+    <Card
+      onClick={() => {
+        setModalOpen(!modalOpen);
+      }}
+    >
       <Img key={id} src={webformatURL}></Img>
     </Card>
   );
