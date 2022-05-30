@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import { ReactComponent as SearchIcon } from "../asset/search.svg";
 import SearchTag from "./SearchTag";
@@ -36,21 +37,31 @@ const SearchInput = styled.input`
   flex: auto;
   margin-left: 8px;
 `;
-const onKeyDown = (event) => {
-  console.log(event);
-};
 
-const Search = () => {
+const Search = ({ setQuery, query }) => {
+  const inputRef = useRef(null);
+
+  const onSearch = (event) => {
+    if (event.key === "Enter") {
+      const currentValue = event.target.value;
+      setQuery(currentValue);
+      inputRef.current.value = "";
+    }
+  };
   return (
     <>
       <SearchBoxContainer>
         <SearchInputContainer>
           <SearchIcon width='24' fill='#5e5e5e' />
-          <SearchInput placeholder='검색 후 ENTER' onKeyDown={onKeyDown} />
+          <SearchInput
+            placeholder='검색 후 ENTER'
+            ref={inputRef}
+            onKeyDown={onSearch}
+          />
         </SearchInputContainer>
       </SearchBoxContainer>
       <SearchTagContainer>
-        <SearchTag />
+        <SearchTag query={query} />
       </SearchTagContainer>
     </>
   );

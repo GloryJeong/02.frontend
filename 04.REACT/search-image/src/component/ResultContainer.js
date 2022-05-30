@@ -19,25 +19,17 @@ const ResultsWrapper = styled.div`
   width: 100%;
 `;
 
-const ResultContainer = () => {
-  const [imgList, setImgList] = useState([]);
-  //   const data = DummyData;
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await getImages();
-      setImgList(data);
-    };
-    fetch();
-  }, []);
-
-  console.log(imgList.hits);
+const ResultContainer = ({ data }) => {
   return (
     <Container>
       <ResultsWrapper>
-        {imgList.hits?.map((imgData) => (
-          <ImageCard key={imgData.id} imgData={imgData} />
-        ))}
-        <NotFoundResult />
+        {data.hits && data.hits.length !== 0 ? (
+          data.hits.map((imgData) => (
+            <ImageCard key={imgData.id} imgData={imgData} />
+          ))
+        ) : (
+          <NotFoundResult />
+        )}
       </ResultsWrapper>
     </Container>
   );
