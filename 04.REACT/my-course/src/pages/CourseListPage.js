@@ -10,6 +10,7 @@ import { useSearchParams } from "react-router-dom";
 
 function CourseListPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(searchParams.get("keyword"));
   const searchKeyword = searchParams.get("keyword");
   const [keyword, setKeyword] = useState(searchKeyword || "");
   const courses = getCourses(searchKeyword);
