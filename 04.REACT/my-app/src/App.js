@@ -25,21 +25,22 @@ import Storage from "./Storage";
 import Inputs from "./Inputs";
 import CSSModule from "./components/CSSModule";
 import StyledComponent from "./components/styledComponents";
+import Dept from "./components/Dept";
 import Async from "./components/Async";
 function App() {
-  const title = "React";
-  // const basicStyle = {color: "green", fontSize : '40px'}
-  // const basic = {color: "red", fontSize : '30px'}
-  // const {color} = basic;
-  // const [previousState,setState] = useState(false)
-  // const changeImportant = () =>{
-  //   setState(!previousState);
-  // }
-  const [company, setCompany] = useState("더존");
-  const [color, setColor] = useState("black");
-  return (
-    <div className='App'>
-      {/* <View>
+ const title = "React";
+ // const basicStyle = {color: "green", fontSize : '40px'}
+ // const basic = {color: "red", fontSize : '30px'}
+ // const {color} = basic;
+ // const [previousState,setState] = useState(false)
+ // const changeImportant = () =>{
+ //   setState(!previousState);
+ // }
+ const [company, setCompany] = useState("더존");
+ const [color, setColor] = useState("black");
+ return (
+  <div className="App">
+   {/* <View>
        <Hello name="react" color="red"></Hello>
        <Hello name="react" color="blue"></Hello>
        <Hello color="yellowgreen" important={true}></Hello>
@@ -47,48 +48,49 @@ function App() {
        <div style={basicStyle}>{title}</div>
      </View> */}
 
-      {/* 부모 - 자식 데이터 전달 */}
-      {/* <Parent>
+   {/* 부모 - 자식 데이터 전달 */}
+   {/* <Parent>
       <Child></Child>
     </Parent> */}
 
-      {/* <UseState1/> */}
-      {/* <UseState2/> */}
-      {/* <UseEffect2 state={previousState}/> */}
-      {/* work 버튼을 클릭 했을 때 
+   {/* <UseState1/> */}
+   {/* <UseState2/> */}
+   {/* <UseEffect2 state={previousState}/> */}
+   {/* work 버튼을 클릭 했을 때 
     --> 1) '작업중 - 콘솔보기'가 출력되면서
         2) 작업이 실행되도록 */}
-      {/* <button onClick={changeImportant}>work</button> */}
+   {/* <button onClick={changeImportant}>work</button> */}
 
-      {/* UseRef */}
-      {/* <UseRef1/> */}
-      {/* <UseRef2/> */}
-      {/* <UseRef3/> */}
+   {/* UseRef */}
+   {/* <UseRef1/> */}
+   {/* <UseRef2/> */}
+   {/* <UseRef3/> */}
 
-      {/* useContext 사용 */}
-      {/* <News
+   {/* useContext 사용 */}
+   {/* <News
      company={company} setCompany={setCompany}></News> */}
-      {/* <UseContext1.Provider value={{company,setCompany,color,setColor}}>
+   {/* <UseContext1.Provider value={{company,setCompany,color,setColor}}>
     <News></News>
      </UseContext1.Provider> */}
 
-      {/* <UseMemo1></UseMemo1> */}
-      {/* <UseMemo2></UseMemo2> */}
-      {/* <UseCallback1></UseCallback1> */}
-      {/* <UseCallback2></UseCallback2> */}
+   {/* <UseMemo1></UseMemo1> */}
+   {/* <UseMemo2></UseMemo2> */}
+   {/* <UseCallback1></UseCallback1> */}
+   {/* <UseCallback2></UseCallback2> */}
 
-      {/* UseReducer1 */}
-      {/* <UseReducer1></UseReducer1> */}
-      {/* <UseReducer2></UseReducer2> */}
-      {/* <UseReducer3></UseReducer3> */}
+   {/* UseReducer1 */}
+   {/* <UseReducer1></UseReducer1> */}
+   {/* <UseReducer2></UseReducer2> */}
+   {/* <UseReducer3></UseReducer3> */}
 
-      {/* <Storage></Storage> */}
-      {/* <Inputs></Inputs> */}
-      {/* <CSSModule></CSSModule> */}
-      <StyledComponent></StyledComponent>
-      {/* <Async></Async> */}
-    </div>
-  );
+   {/* <Storage></Storage> */}
+   {/* <Inputs></Inputs> */}
+   {/* <CSSModule></CSSModule> */}
+   {/* <StyledComponent></StyledComponent> */}
+   {/* <Async></Async> */}
+   <Dept></Dept>
+  </div>
+ );
 }
 
 export default App;
