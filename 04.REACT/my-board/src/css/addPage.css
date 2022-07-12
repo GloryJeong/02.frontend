@@ -1,0 +1,21 @@
+.addPage {
+ margin-top: 5vh;
+ margin-left: 5vw;
+ margin-right: 5vw;
+ display: flex;
+ flex-direction: column;
+ border: 2px solid black;
+}
+.addPage input,
+textarea {
+ width: 80vw;
+}
+.addPage * {
+ margin: 10px;
+}
+.addPage #content {
+ height: 40vh;
+}
+.addPage a {
+ border: 2px solid black;
+}

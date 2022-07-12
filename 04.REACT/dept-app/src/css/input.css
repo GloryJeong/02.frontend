@@ -1,0 +1,112 @@
+.search-box,
+.close-icon,
+.search-wrapper {
+ position: relative;
+ padding: 10px;
+}
+.search-wrapper {
+ width: 500px;
+ margin: auto;
+ margin-top: 50px;
+}
+.search-box {
+ width: 80%;
+ border: 1px solid #ccc;
+ outline: 0;
+ border-radius: 15px;
+}
+.search-box:focus {
+ box-shadow: 0 0 15px 5px grey;
+ border: 2px solid #bebede;
+}
+.close-icon {
+ border: 1px solid transparent;
+ background-color: transparent;
+ display: inline-block;
+ vertical-align: middle;
+ outline: 0;
+ cursor: pointer;
+}
+.close-icon:after {
+ content: "X";
+ display: block;
+ width: 15px;
+ height: 15px;
+ position: absolute;
+ background-color: black;
+ z-index: 1;
+ right: 35px;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ padding: 2px;
+ border-radius: 50%;
+ text-align: center;
+ color: white;
+ font-weight: normal;
+ font-size: 12px;
+ box-shadow: 0 0 2px #e50f0f;
+ cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+ display: none;
+}
+
+button {
+ margin: 5px;
+}
+
+/* *{
+  font-family: 'Segoe UI', sans-serif;
+} */
+
+.form-box input {
+ border-radius: 20px;
+ border: 1px solid #ccc;
+ padding: 8px 20px;
+ outline: none;
+}
+
+.form-box button {
+ background-color: darkgray;
+ outline: none;
+ border: none;
+ padding: 8px 30px;
+ border-radius: 20px;
+ color: #fff;
+ box-shadow: 0px 3px 6px #ccc;
+ cursor: pointer;
+}
+
+.form-box button:hover {
+ background-color: lightgray;
+}
+
+.form-box {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.text-box {
+ display: flex;
+ flex-direction: column;
+ height: 35px;
+}
+
+.text-box > span {
+ margin-left: 10px;
+ color: red;
+}
+
+.button-box {
+ margin-left: 10px;
+}
+.pageNum {
+ margin: 4px;
+}
+.pageNum:hover {
+ cursor: pointer;
+ font-size: 25px;
+ color: lightgray;
+}

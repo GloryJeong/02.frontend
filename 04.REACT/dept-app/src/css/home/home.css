@@ -1,0 +1,16 @@
+.head {
+ font-size: 40px;
+ justify-items: center;
+ text-align: center;
+ background-color: grey;
+ height: 10vh;
+}
+.container {
+ margin-top: 30px;
+}
+.head .title {
+ margin: 5%;
+}
+.title:hover {
+ color: white;
+}

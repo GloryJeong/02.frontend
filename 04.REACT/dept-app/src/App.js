@@ -1,26 +1,27 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Link, Outlet, Router } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import "./css/home/home.css";
 
 function App() {
+ function activeStyle({ isActive }) {
+  return {
+   color: "black",
+   fontWeight: "bolder",
+   textDecoration: "none",
+   fontSize: isActive ? "40px" : "20px",
+  };
+ }
  return (
   <div>
-   <div>
-    <h1>DEPT!!</h1>
-    <Link to="/insert">
-     <button>insert</button>
-    </Link>
-    <Link to="/select">
-     <button>select</button>
-    </Link>
-    <Link to="/delete">
-     <button>delete</button>
-    </Link>
-    <Link to="/update">
-     <button>update</button>
-    </Link>
+   <div className="head">
+    <NavLink to="/dept" style={activeStyle}>
+     <span className="title">Dept!!</span>
+    </NavLink>
+    <NavLink to="/emp" style={activeStyle}>
+     <span className="title">EMP!!</span>
+    </NavLink>
    </div>
-   <div>
+   <div className="container">
     <Outlet></Outlet>
    </div>
   </div>

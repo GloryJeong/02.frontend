@@ -1,0 +1,48 @@
+.commentBtn {
+ display: flex;
+}
+.commentBtn span {
+ display: flex;
+ border: 2px solid black;
+ min-height: 40px;
+ min-width: 80px;
+ justify-content: center;
+ align-items: center;
+ cursor: pointer;
+}
+.addComment {
+ margin-right: 30vw;
+ display: flex;
+ flex-direction: column;
+ border: 2px solid black;
+}
+.commentOption {
+ display: flex;
+ text-align: right;
+}
+.commentOption .optionBtn {
+ display: flex;
+ flex-direction: column;
+ border: 2px solid black;
+ min-height: 4vh;
+ min-width: 5vw;
+ justify-content: center;
+ align-items: center;
+ cursor: pointer;
+}
+.commenter {
+ display: flex;
+}
+.commentContent {
+ display: flex;
+}
+.addComment input {
+ border: 2px black solid;
+}
+.commentTitle {
+ font-size: 12px;
+}
+.commenter .commentContent {
+ font-size: 15px;
+ font-weight: bold;
+}

@@ -1,0 +1,45 @@
+.updatePage {
+ margin-top: 5vh;
+ margin-left: 5vw;
+ margin-right: 5vw;
+ display: flex;
+ flex-direction: column;
+ border: 2px solid black;
+}
+.updatePage h3 {
+ font-weight: bolder;
+ font-size: 35px;
+}
+.updatePage input,
+textarea {
+ width: 80vw;
+}
+.updatePage * {
+ margin: 10px;
+}
+.updatePage #content {
+ height: 40vh;
+}
+.updatePage .labels {
+ font-size: 15px;
+ font-weight: bold;
+}
+.updatePgae a {
+ border: 1px solid black;
+}
+.updatePage .userData {
+ width: 80vw;
+ font-weight: 600;
+ border: 1px solid black;
+}
+.updatePage .submitBtn {
+ display: flex;
+}
+.updatePage .submitBtn span {
+ display: flex;
+ border: 2px solid black;
+ min-height: 40px;
+ min-width: 80px;
+ justify-content: center;
+ align-items: center;
+}
