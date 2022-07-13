@@ -3,17 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import Board from "./pages/board/Board";
 import AddBoard from "./pages/board/AddBoard";
-import UpdateBoard from "./pages/board/UpdateBoard";
+import BoardListContainer from "./container/board/BoardListContainer";
+import BoardContainer from "./container/board/BoardContainer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
  <BrowserRouter>
   <Routes>
-   <Route path="/" element={<Board />} />
+   <Route path="/" element={<BoardListContainer />} />
    <Route path="/add" element={<AddBoard />} />
-   <Route path="/board/edit/:no" element={<UpdateBoard />} />
+   <Route path="/board/edit/:no" element={<BoardContainer />} />
   </Routes>
  </BrowserRouter>
 );

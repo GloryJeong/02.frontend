@@ -1,12 +1,18 @@
-function Pagination({ data, setPage, page }) {
+import "../css/pagination.css";
+function Pagination({ data, setPage, currentPage }) {
  return (
-  <>
-   <span onClick={() => setPage(page === 1 ? page : data.start - data.size)}>
-    이전
+  <div className="pagination">
+   <span
+    onClick={() =>
+     setPage(currentPage <= 1 ? currentPage : data.start - data.size)
+    }
+   >
+    Prev
    </span>
    {data.pageList &&
     data.pageList.map((page) => (
      <span
+      className={currentPage === page ? "currentPage" : "nonCurrentPage"}
       key={page}
       id={page}
       onClick={(e) => {
@@ -18,12 +24,16 @@ function Pagination({ data, setPage, page }) {
     ))}
    <span
     onClick={() =>
-     setPage(page === data.totalPage ? page : data.start + data.size)
+     setPage(
+      data.start + data.size > data.totalPage
+       ? currentPage
+       : data.start + data.size
+     )
     }
    >
-    다음
+    Next
    </span>
-  </>
+  </div>
  );
 }
 export default Pagination;

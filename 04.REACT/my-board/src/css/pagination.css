@@ -1,0 +1,28 @@
+.currentPage {
+ color: white;
+ background-color: #7d9d9c;
+}
+
+/* .nonCurrentPage {
+
+} */
+
+.pagination {
+ float: inline-end;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: static;
+}
+.pagination span {
+ text-align: center;
+ min-width: 40px;
+ min-height: 20px;
+ font-size: 20px;
+ border: 1px solid lightgray;
+}
+.pagination span:hover {
+ cursor: pointer;
+ background-color: #7d9d9c;
+ color: white;
+}

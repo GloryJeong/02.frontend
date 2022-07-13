@@ -25,8 +25,3 @@ export function updateComment(commentNo, data) {
  const url = baseUrl + `/${commentNo}`;
  axios.put(url, data).catch((err) => console.log("에러", err));
 }
-
-export function boardCommentsCount(startBoardNo, endBoardNo, setComments) {
- const url = baseUrl + `s?start=${startBoardNo}&end=${endBoardNo}`;
- axios.get(url).catch((err) => console.log(err));
-}

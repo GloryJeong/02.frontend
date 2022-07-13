@@ -12,6 +12,8 @@
 }
 .updatePage input,
 textarea {
+ border: 2px solid #f5eddc;
+ background-color: #f0ebe3;
  width: 80vw;
 }
 .updatePage * {
@@ -42,4 +44,13 @@ textarea {
  min-width: 80px;
  justify-content: center;
  align-items: center;
+}
+.userData {
+ background-color: #f0ebe3;
+}
+.submitBtn > span {
+ background-color: #cfd2cf;
+}
+.submitBtn > span > a {
+ text-decoration: none;
 }
